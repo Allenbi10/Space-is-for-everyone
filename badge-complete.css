@@ -1,0 +1,1 @@
+.badge-outline:not(.complete){filter:drop-shadow(0 0 9px rgba(255,209,90,.12))}.badge-outline.complete{filter:drop-shadow(0 0 12px rgba(255,209,90,.85));animation:badgeGlow 1.4s ease-in-out infinite}.badge-outline.complete .badge-center{color:var(--yellow);text-shadow:0 0 12px var(--yellow)}@keyframes badgeGlow{50%{filter:drop-shadow(0 0 25px rgba(255,209,90,1))}}

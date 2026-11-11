@@ -1,0 +1,1 @@
+.mission-arrow{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;opacity:0;transition:opacity .35s}.mission-arrow.visible{opacity:1}.mission-arrow line{stroke:#ffd15a;stroke-width:2;stroke-dasharray:7 8;filter:drop-shadow(0 0 5px rgba(255,209,90,.85));animation:arrowDash 1.2s linear infinite}@keyframes arrowDash{to{stroke-dashoffset:-15}}

@@ -1,0 +1,3 @@
+@font-face{font-family:'Rostex';src:local('Rostex');font-display:swap}
+:root{--page-font:'Rostex',Manrope,Arial,sans-serif}
+body,body *{font-family:var(--page-font)!important}

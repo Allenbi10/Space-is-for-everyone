@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mission Control is a hands-on space learning lab for six school subjects.">
+  <title>Mission Control · Space Is For Everyone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="interactions.css">
+  <link rel="stylesheet" href="universe.css">
+  <link rel="stylesheet" href="progress.css">
+  <link rel="stylesheet" href="arrows.css">
+  <link rel="stylesheet" href="badge-progress.css">
+  <link rel="stylesheet" href="badge-complete.css">
+  <link rel="stylesheet" href="rostex.css">
+  <link rel="stylesheet" href="math.css">
+  <link rel="stylesheet" href="trajectory-fix.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Mission Control home">
+      <span class="brand-mark">✦</span>
+      <span><strong>MISSION CONTROL</strong></span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-button" id="soundToggle" aria-label="Toggle sound" title="Toggle sound">◌</button>
+    </div>
+  </header>
+
+  <main id="home" class="home-screen">
+    <section class="hero">
+      <div class="eyebrow"><span></span> LEARNING LAB 01 / ORBITAL CLASSROOM <span></span></div>
+      <p class="hero-copy">Choose a subject and explore how it connects to space.</p>
+    </section>
+
+    <section class="solar-system" aria-labelledby="subjects-title">
+      <svg class="mission-arrow" id="missionArrow" aria-hidden="true"><defs><marker id="arrowHead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="#ffd15a"></path></marker></defs><line id="missionArrowLine" marker-end="url(#arrowHead)"></line></svg>
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+      <div class="sun"><span class="sun-glow"></span><strong>EXPLORE</strong></div>
+      <div class="planet-spot spot-math"><button class="planet planet-math" data-subject="math"><span class="planet-core"></span><b>01</b><strong>Math</strong></button></div>
+      <div class="planet-spot spot-art"><button class="planet planet-art" data-subject="art"><span class="planet-core"></span><b>02</b><strong>Art + Design</strong></button></div>
+      <div class="planet-spot spot-engineering"><button class="planet planet-engineering" data-subject="engineering"><span class="planet-core"></span><b>03</b><strong>Engineering</strong></button></div>
+      <div class="planet-spot spot-history"><button class="planet planet-history" data-subject="history"><span class="planet-core"></span><b>04</b><strong>History + Teamwork</strong></button></div>
+      <div class="planet-spot spot-reading"><button class="planet planet-reading" data-subject="reading"><span class="planet-core"></span><b>05</b><strong>Reading + Writing</strong></button></div>
+      <div class="planet-spot spot-science"><button class="planet planet-science" data-subject="science"><span class="planet-core"></span><b>06</b><strong>Science</strong></button></div>
+    </section>
+
+    <section class="mission-strip">
+      <div><strong>Explore six subjects through one universe.</strong></div>
+      <div class="progress-wrap"><span>0 / 6 missions complete</span><div class="progress"><i id="progressBar"></i></div></div>
+      <button class="text-button" id="resumeBtn">View flight log <span>→</span></button>
+    </section>
+    <section class="badge-progress" aria-label="Subject badge progress">
+      <div class="badge-outline"><span class="badge-part" data-badge-part="0"></span><span class="badge-part" data-badge-part="1"></span><span class="badge-part" data-badge-part="2"></span><span class="badge-part" data-badge-part="3"></span><span class="badge-part" data-badge-part="4"></span><span class="badge-part" data-badge-part="5"></span><div class="badge-center">✦</div></div>
+      <div><strong>Explorer badge</strong><small id="badgeProgressText">Complete a subject to fill the badge.</small></div>
+    </section>
+    <section id="universeUnlock" class="universe-unlock" hidden>
+      <span class="unlock-star">✦</span><div><strong>ALL SIX WORLDS COMPLETE</strong><small>A new universe is ready.</small></div><button class="primary-button" id="universeBtn">ENTER NEW UNIVERSE →</button>
+    </section>
+  </main>
+
+  <section id="activity" class="activity-screen" hidden>
+    <div class="activity-top"><button class="back-button" id="backBtn">← <span>Return to solar system</span></button><span class="mission-counter" id="missionCounter">MISSION 01 / 06</span></div>
+    <div class="activity-layout">
+      <aside class="mission-aside"><div class="aside-planet" id="asidePlanet"></div><span class="eyebrow" id="activityEyebrow">MISSION 01</span><h2 id="activityTitle">Math</h2><p id="activityIntro"></p></aside>
+      <div class="activity-card"><div id="activityContent"></div></div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="badgeModal" class="badge-modal" hidden><div class="badge-card"><button class="badge-close" id="closeBadge" aria-label="Close badge">×</button><div class="exploding-sun" aria-hidden="true"><span></span></div><div class="badge-icon">✦</div><span class="eyebrow">UNIVERSE 02 / BADGE EARNED</span><h2>Cosmic Pathfinder</h2><p>You connected six subjects and opened a new universe of questions.</p><button class="primary-button" id="badgeDone">BACK TO THE SOLAR SYSTEM</button></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
